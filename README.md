@@ -2,7 +2,7 @@
 ***Recicle nossos oceanos, você ganha, eu ganho, o mar ganha***
 
 
-# 1 - Integrantes
+# Integrantes
     RM: 551401 Turma: 2TDSPF Nome: Ana Luiza Fontes Franco
     RM: 551856 Turma: 2TDSPF Nome: Beatriz Fon Ehnert de Santi
     RM: 99708  Turma: 2TDSPW Nome: Gabriel Francisco Lobo
