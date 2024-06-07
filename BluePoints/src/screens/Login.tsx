@@ -5,7 +5,9 @@ import React, { useState } from 'react';
 import { StyleSheet, View, TouchableOpacity, Text, TextInput, Image, Dimensions, ScrollView, } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { GoogleSignin } from '@react-native-google-signin/google-signin';
+import { GoogleSignin, statusCodes } from '@react-native-google-signin/google-signin';
+import auth from '@react-native-firebase/auth'; 
+import { useGoogleSignIn } from '@react-native-google-signin/google-signin';
 
 import Header from './Header';
 
@@ -35,8 +37,28 @@ export default function Login() {
 
 
 
-  const handleGoogleLogin = () => {
-    console.log('Login com Google');
+  const handleGoogleLogin = async () => {
+    try {
+      await GoogleSignin.configure({
+        webClientId: 'YOUR_GOOGLE_WEB_CLIENT_ID', // Replace with your Firebase web client ID
+      });
+      await GoogleSignin.hasPlayServices();
+      const { idToken } = await signIn();
+      const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+      await auth().signInWithCredential(googleCredential);
+      console.log('Google Login Success');
+      // Handle successful login, maybe navigate to another screen
+    } catch (error) {
+      if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+        console.log('User cancelled the login process');
+      } else if (error.code === statusCodes.IN_PROGRESS) {
+        console.log('Signing in process is in progress');
+      } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+        console.log('Play Services Not Available or not installed');
+      } else {
+        console.log('Login failed', error);
+      }
+    }
   };
 
   const toggleShowPassword = () => {
