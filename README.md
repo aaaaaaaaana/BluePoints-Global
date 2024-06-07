@@ -3,8 +3,8 @@
 
 
 <div>
-<img align="center" alt="logo1" height=30%  width=30% src="documentacao/diagrama/BluePointsLogo.png" />
-<img align="center" alt="logo" height=30%  width=30% src="documentacao/diagrama/BluePointsLogo2.png" />
+<img align="center" alt="logo1" height=30%  width=30% src="documentacao/BluePointsLogo.png" />
+<img align="center" alt="logo" height=30%  width=30% src="documentacao/BluePointsLogo2.png" />
 </div>
 
 
