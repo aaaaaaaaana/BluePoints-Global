@@ -2,6 +2,13 @@
 ***Recicle nossos oceanos, você ganha, eu ganho, o mar ganha***
 
 
+<div>
+<img align="center" alt="logo1" height=30%  width=30% src="documentacao/diagrama/BluePointsLogo.png" />
+<img align="center" alt="logo" height=30%  width=30% src="documentacao/diagrama/BluePointsLogo2.png" />
+</div>
+
+
+
 # Integrantes
     RM: 551401 Turma: 2TDSPF Nome: Ana Luiza Fontes Franco
     RM: 551856 Turma: 2TDSPF Nome: Beatriz Fon Ehnert de Santi
