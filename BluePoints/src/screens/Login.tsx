@@ -20,6 +20,8 @@ export default function Login() {
   const [senha, setSenha] = useState('');
   const [showSenha, setShowSenha] = useState(false);
 
+  const { signIn } = useGoogleSignIn();
+
   const handleLogin = async () => {
 
     // let urlTest = `http://localhost/usuario?email=${listaEmail[0]}%40${listaEmail[1]}`
@@ -61,9 +63,13 @@ export default function Login() {
     }
   };
 
+
+  
   const toggleShowPassword = () => {
     setShowSenha(!showSenha);
   };
+
+
 
   return (
     <View style={style.container}>
