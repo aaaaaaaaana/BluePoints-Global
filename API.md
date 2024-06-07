@@ -2,7 +2,7 @@
 
 Bem-vindo ao BluePoints! Aqui você encontrará informações sobre como usar nossos endpoints para acessar, cadastrar e visualizar seus pontos no aplicativo.
 
-### Autenticação
+### Autenticação Login
 
 #### Endpoint: `/auth/usuario`
 
@@ -25,7 +25,7 @@ Bem-vindo ao BluePoints! Aqui você encontrará informações sobre como usar no
   "email": "carlos.bezerra@example.com",
   "senha": "senha123"
 }
-
+```
 
 #### Exemplo de Response (Sucesso):
 
@@ -40,3 +40,4 @@ Bem-vindo ao BluePoints! Aqui você encontrará informações sobre como usar no
     "pontos": 1000
   }
 }
+```
