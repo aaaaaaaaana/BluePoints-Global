@@ -15,3 +15,6 @@
     RM: 99708  Turma: 2TDSPW Nome: Gabriel Francisco Lobo
     RM: 552295 Turma: 2TDSPF Nome: Matheus Felipe Camarinha Duarte
     RM: 98672  Turma: 2TDSPF Nome: Mirelly Ribeiro Azevedo
+
+
+# 1 ponto da global pelo Khoot do dia 22/05/24
