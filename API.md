@@ -15,7 +15,7 @@ Bem-vindo ao BluePoints! Aqui você encontrará informações sobre como usar no
 
 #### Resposta:
 
-* **Sucesso:** Um código de status 200 (OK) é retornado com uma mensagem de sucesso.
+* **Sucesso:** Um código de status 200 (OK) é retornado com os dados do usuário autenticado em formato JSON, incluindo id, email, e informações da pessoa associada ao usuário.
 * **Falha:** Um código de status 401 (Unauthorized) é retornado com uma mensagem de erro.
 
 #### Exemplo de Request:
@@ -26,3 +26,17 @@ Bem-vindo ao BluePoints! Aqui você encontrará informações sobre como usar no
   "senha": "senha123"
 }
 
+
+#### Exemplo de Response (Sucesso):
+
+```json
+{
+  "id": 123,
+  "email": "carlos.bezerra@example.com",
+  "pessoa": {
+    "id": 456,
+    "nome": "Carlos",
+    "sobrenome": "Bezerra",
+    "pontos": 1000
+  }
+}
