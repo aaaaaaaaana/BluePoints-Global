@@ -1,28 +1,28 @@
 ## Endpoints do Projeto BluePoints
 
-Este README descreve os endpoints da API do projeto, detalhando os métodos, parâmetros e respostas esperadas.
+Bem-vindo ao BluePoints! Aqui você encontrará informações sobre como usar nossos endpoints para acessar, cadastrar e visualizar seus pontos no aplicativo.
 
 ### Autenticação
 
-#### Endpoint: `/auth/login`
+#### Endpoint: `/auth/usuario`
 
 #### Método: POST
 
 #### Parâmetros:
 
-* `username` (string): Nome de usuário do usuário.
-* `password` (string): Senha do usuário.
+* `email` (string): Email do usuário.
+* `senha` (string): Senha do usuário.
 
 #### Resposta:
 
-* **Sucesso:** Um token JWT (JSON Web Token) é retornado como um header `Authorization` na resposta.
+* **Sucesso:** Um código de status 200 (OK) é retornado com uma mensagem de sucesso.
 * **Falha:** Um código de status 401 (Unauthorized) é retornado com uma mensagem de erro.
 
 #### Exemplo de Request:
 
 ```json
 {
-  "username": "user123",
-  "password": "password123"
+  "email": "carlos.bezerra@example.com",
+  "senha": "senha123"
 }
 
