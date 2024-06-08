@@ -4,7 +4,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, TouchableOpacity, Text, TextInput, Image, Dimensions, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 import Header from './Header'
@@ -20,11 +20,30 @@ export default function RedefinirSenha() {
   const [email, setEmail] = useState('');
 
 
-  const handleRedefinirSenha = () => {
-    
-    console.log('Email:', email);
+  const getUser = async (email) => {
+    try {
+      const userString = await AsyncStorage.getItem(`user-${email}`);
+      if (userString) {
+        return JSON.parse(userString);
+      } else {
+        return null;
+      }
+    } catch (error) {
+      console.error('Erro ao buscar usuário:', error);
+      return null;
+    }
+
   };
 
+
+  const handleRedefinirSenha = async () => {
+    const usuario = await getUser(email);
+    if (usuario) {
+      navigation.navigate('NovaSenha', { email }); 
+    } else {
+      alert('Email não encontrado.');
+    }
+  };
 
 
 
