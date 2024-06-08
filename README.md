@@ -7,7 +7,8 @@
 <img align="center" alt="logo" height=30%  width=30% src="documentacao/BluePointsLogo2.png" />
 </div>
 
-
+<br>
+<br>
 
 # Integrantes
     RM: 551401 Turma: 2TDSPF Nome: Ana Luiza Fontes Franco
@@ -19,6 +20,8 @@
 
  1 ponto da global pelo Khoot do dia 22/05/24 - RM: 552295 Turma: 2TDSPF Nome: Matheus Felipe Camarinha Duarte
 
+<br>
+<br>
 
 # Documentação API
 
