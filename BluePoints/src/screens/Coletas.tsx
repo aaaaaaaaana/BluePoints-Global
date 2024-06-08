@@ -1,6 +1,3 @@
-
-
-
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image, Linking } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -14,7 +11,7 @@ const regioes = [
     praias: [
       {
         nome: 'Praia Grande',
-        imagem: require('../../assets/download.gif'), 
+        imagem:{uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/GUILHERMINA_-_DEZ_2010_-_panoramio_%282%29.jpg/800px-GUILHERMINA_-_DEZ_2010_-_panoramio_%282%29.jpg'}, 
         endereco: 'Solemar, Praia Grande - State of São Paulo',
         latitude: -24.0081, 
         longitude: -46.5499 
@@ -23,7 +20,7 @@ const regioes = [
        
        
         nome: 'Guarujá',
-        imagem: require('../../assets/download.gif'), 
+        imagem:{uri: 'https://magazine.zarpo.com.br/wp-content/uploads/2017/02/Praias-no-Guaruja_praia-da-enseada.jpg'}, 
         endereco: 'Jardim Guaiuba, Guarujá - State of São Paulo',
         latitude: -24.0206, 
         longitude: -46.4274 
@@ -32,7 +29,7 @@ const regioes = [
         
         
         nome: 'Santos',
-        imagem: require('../../assets/download.gif'), 
+        imagem:{uri: 'https://www.costacruzeiros.com/content/dam/costa/costa-magazine/article-images/santos-beaches/spiagge-santos-praia-guaiuba.jpg.image.1296.974.high.jpg'}, 
         endereco: 'Av. Ana Costa, 443 - Gonzaga, Santos - SP, 11060-003',
         latitude: -23.9639, 
         longitude: -46.3322 
@@ -41,7 +38,7 @@ const regioes = [
 
 
         nome: 'Itanhaém',
-        imagem: require('../../assets/download.gif'), 
+        imagem:{uri: 'https://www.baalbek.com.br/wp-content/uploads/2020/11/11.jpg'}, 
         endereco: 'Av. Eng. José de Barro Saraíva - Nova Itanhaém - Praia, Itanhaém - SP, 11740-000',
         latitude: -24.2076, 
         longitude: -47.0592 
@@ -50,7 +47,7 @@ const regioes = [
        
        
         nome: 'Ubatuba',
-        imagem: require('../../assets/download.gif'), 
+        imagem:{uri: 'https://www.voltologo.net/wp-content/uploads/2017/03/roteiro-pelas-praias-de-ubatuba-sp.jpg.webp'}, 
         endereco: 'Rod. Rio-Santos, Km 77 - Maranduba, Ubatuba - SP, 11680-000',
         latitude: -23.5075, 
         longitude: -45.1771 
@@ -64,7 +61,7 @@ const regioes = [
     praias: [
       {
         nome: 'Copacabana',
-        imagem: require('../../assets/download.gif'), 
+        imagem: {uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNQ8C4Nkhi9Ax9Nx15Ztp2-xMcX08zAa3SgA&s'}, 
         endereco: 'Av. Atlântica - Copacabana, Rio de Janeiro - RJ.',
         latitude: -22.9715, 
         longitude: -43.1724 
@@ -73,7 +70,7 @@ const regioes = [
        
        
         nome: 'Ipanema',
-        imagem: require('../../assets/download.gif'), 
+        imagem:{uri: 'https://media-manager.noticiasaominuto.com.br/1920/naom_65f987076c86f.jpeg'}, 
         endereco: 'R. Saint Roman, 112-138 - Copacabana, Rio de Janeiro - RJ.',
         latitude: -22.9813, 
         longitude: -43.1951
@@ -82,7 +79,7 @@ const regioes = [
         
         
         nome: 'Leblon',
-        imagem: require('../../assets/download.gif'), 
+        imagem:{uri: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/78/70/da/20151104-141516-largejpg.jpg?w=1200&h=1200&s=1'}, 
         endereco: 'Av. Delfim Moreira, 710 - Leblon, Rio de Janeiro - RJ.',
         latitude: -22.9915, 
         longitude: -43.2061
@@ -91,7 +88,7 @@ const regioes = [
        
        
         nome: 'Barra da Tijuca',
-        imagem: require('../../assets/download.gif'), 
+        imagem:{uri: 'https://nabarradatijuca.com.br/wp-content/uploads/2022/11/313268773_190504056801771_7917375232128557278_n-e1668854837548.jpg'}, 
         endereco: 'Av. Rosalina Coelho Lisboa, 128-312 - Barra da Tijuca, Rio de Janeiro - RJ.',
         latitude: -23.0038, 
         longitude: -43.3359
@@ -100,7 +97,7 @@ const regioes = [
         
         
         nome: 'Praia do Recreio',
-        imagem: require('../../assets/download.gif'), 
+        imagem:{uri: 'https://cdn-clkff.nitrocdn.com/eCUsSRygPySlWmyNNHnSuXAhykqBSMth/assets/static/optimized/rev-87041cc/wp-content/uploads/2018/02/recreio_dos_bandeirantes.png'}, 
         endereco: 'Recreio dos Bandeirantes, Rio de Janeiro - State of Rio de Janeiro',
         latitude: -23.0440, 
         longitude: -43.4561
@@ -113,7 +110,7 @@ const regioes = [
     praias: [
       {
         nome: 'Baía dos Golfinhos',
-        imagem: require('../../assets/download.gif'), 
+        imagem:{uri: 'https://www.vivepipa.com//data/imagenes/2019/01/08/1861/lg_1546982868-lg_1546892233-DSC_9160.JPG'}, 
         endereco: 'Av. João Paulo Pinto, Tibau do Sul - RN.',
         latitude: -7.1076, 
         longitude: -34.8880 
@@ -122,7 +119,7 @@ const regioes = [
        
        
         nome: 'Praia de Pipa',
-        imagem: require('../../assets/download.gif'), 
+        imagem:{uri: 'https://imgmd.net/images/v1/guia/1926143/praia-da-pipa.jpg'}, 
         endereco: 'PRAIA DA PIPA - Rua da praia, Largo São Sebastião, SN - Centro, Tibau do Sul - RN.',
         latitude: -6.3296, 
         longitude: -35.0904 
@@ -131,7 +128,7 @@ const regioes = [
        
        
         nome: 'Praia de Jericoacoara',
-        imagem: require('../../assets/download.gif'), 
+        imagem:{uri: 'https://upload.wikimedia.org/wikipedia/commons/5/5c/Anderps_067.JPG'}, 
         endereco: 'Rua Principal, 21 - 348, Jijoca de Jericoacoara - CE.',
         latitude: -2.8803, 
         longitude: -40.2207 
@@ -140,7 +137,7 @@ const regioes = [
         
         
         nome: 'Praia de Carneiros',
-        imagem: require('../../assets/download.gif'), 
+        imagem:{uri: 'https://www.melhoresdestinos.com.br/wp-content/uploads/2021/09/praia-carneiros-2.jpeg'}, 
         endereco: 'R. da Pe, 72 - Tamandaré, PE.',
         latitude: -8.1248, 
         longitude: -35.0056 
@@ -149,7 +146,7 @@ const regioes = [
         
         
         nome: 'Praia do Morro Branco',
-        imagem: require('../../assets/download.gif'), 
+        imagem:{uri: 'https://i.pinimg.com/736x/40/02/56/40025648688516c07df6678903b77915.jpg'}, 
         endereco: 'Rua Vicente Matias, 148 - Beberibe, CE, 62840-000',
         latitude: -7.3236, 
         longitude: -34.9119 
@@ -278,5 +275,3 @@ const style = StyleSheet.create({
 });
 
 export default Coletas; 
-
-
