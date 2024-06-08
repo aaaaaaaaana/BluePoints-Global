@@ -5,9 +5,7 @@ import React, { useState } from 'react';
 import { StyleSheet, View, TouchableOpacity, Text, TextInput, Image, Dimensions, ScrollView, } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { GoogleSignin, statusCodes } from '@react-native-google-signin/google-signin';
-import auth from '@react-native-firebase/auth'; 
-import { useGoogleSignIn } from '@react-native-google-signin/google-signin';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
 import Header from './Header';
 
@@ -20,51 +18,34 @@ export default function Login() {
   const [senha, setSenha] = useState('');
   const [showSenha, setShowSenha] = useState(false);
 
-  const { signIn } = useGoogleSignIn();
+
+  const usuarios = {
+    'luiza@example.com': { senha: 'senha123', perfil: 'luiza' },
+    'maria@example.com': { senha: 'senha456', perfil: 'maria' },
+    'isabella@example.com': { senha: 'senha789', perfil: 'isabella' },
+  };
+
 
   const handleLogin = async () => {
+   const usuario = usuarios[email];
+    if (usuario && usuario.senha === senha) {
 
-    // let urlTest = `http://localhost/usuario?email=${listaEmail[0]}%40${listaEmail[1]}`
-    let url = `http://localhost/usuario?email=${encodeURIComponent(email)}`;
-    let response = await fetch(url, {
-        method: 'GET',
-    });
-    console.log(response.status)
-
-
-
-    console.log('Email:', email);
-    console.log('Senha:', senha);
-  };
-
-
-
-  const handleGoogleLogin = async () => {
-    try {
-      await GoogleSignin.configure({
-        webClientId: 'YOUR_GOOGLE_WEB_CLIENT_ID', // Replace with your Firebase web client ID
-      });
-      await GoogleSignin.hasPlayServices();
-      const { idToken } = await signIn();
-      const googleCredential = auth.GoogleAuthProvider.credential(idToken);
-      await auth().signInWithCredential(googleCredential);
-      console.log('Google Login Success');
-      // Handle successful login, maybe navigate to another screen
-    } catch (error) {
-      if (error.code === statusCodes.SIGN_IN_CANCELLED) {
-        console.log('User cancelled the login process');
-      } else if (error.code === statusCodes.IN_PROGRESS) {
-        console.log('Signing in process is in progress');
-      } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
-        console.log('Play Services Not Available or not installed');
-      } else {
-        console.log('Login failed', error);
-      }
-    }
-  };
-
-
+      navigation.navigate('Tab', { screen: 'Home', params: { perfil: usuario.perfil } }); 
+    } else {
   
+      alert('Email ou senha inválidos.');
+    }
+
+  };
+
+
+
+  const handleGoogleLogin = () => {
+    navigation.navigate('Tab', { screen: 'Home' });
+  };
+
+
+
   const toggleShowPassword = () => {
     setShowSenha(!showSenha);
   };
