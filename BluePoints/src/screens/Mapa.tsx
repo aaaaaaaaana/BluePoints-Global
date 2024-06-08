@@ -94,7 +94,7 @@ const pontosDeColeta = [
     longitude: -43.1724,
     localidade: 'Rio de Janeiro',
     
-    foto: {uri: 'https://www.costacruzeiros.com/content/dam/costa/costa-magazine/articles-magazine/beaches/conhecendo-a-praia-de-copacabana/copacabana_d.jpg.image.1296.974.high.jpg'},
+    foto: {uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNQ8C4Nkhi9Ax9Nx15Ztp2-xMcX08zAa3SgA&s'},
     
     
     descricao: 'Famosa praia com areia clara e vista para o Pão de Açúcar.'
@@ -334,7 +334,7 @@ const localidades = [
         longitude: -43.1724,
         localidade: 'Rio de Janeiro',
         
-        foto: {uri: 'https://www.costacruzeiros.com/content/dam/costa/costa-magazine/articles-magazine/beaches/conhecendo-a-praia-de-copacabana/copacabana_d.jpg.image.1296.974.high.jpg'},
+        foto: {uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNQ8C4Nkhi9Ax9Nx15Ztp2-xMcX08zAa3SgA&s'},
         
         descricao: 'Famosa praia com areia clara e vista para o Pão de Açúcar.'
       },
