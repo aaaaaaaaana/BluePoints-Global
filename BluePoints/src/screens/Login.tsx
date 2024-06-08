@@ -6,10 +6,42 @@ import { StyleSheet, View, TouchableOpacity, Text, TextInput, Image, Dimensions,
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+
 
 import Header from './Header';
 
 const { width: screenWidth } = Dimensions.get('window');
+
+
+const saveUser = async (email, senha) => {
+  try {
+    await AsyncStorage.setItem(`user-${email}`, JSON.stringify({ email, senha }));
+    console.log('Usuário salvo com sucesso!');
+  } catch (error) {
+    console.error('Erro ao salvar usuário:', error);
+  }
+};
+
+
+
+const getUser = async (email) => {
+  try {
+    const userString = await AsyncStorage.getItem(`user-${email}`);
+    if (userString) {
+      return JSON.parse(userString);
+    } else {
+      return null;
+    }
+  } catch (error) {
+    console.error('Erro ao buscar usuário:', error);
+    return null;
+  }
+};
+
+
+
 
 export default function Login() {
   const navigation = useNavigation();
@@ -27,15 +59,15 @@ export default function Login() {
 
 
   const handleLogin = async () => {
-   const usuario = usuarios[email];
-    if (usuario && usuario.senha === senha) {
+    
+    const usuario = await getUser(email); 
 
+    if (usuario && usuario.senha === senha) {
       navigation.navigate('Tab', { screen: 'Home', params: { perfil: usuario.perfil } }); 
+      
     } else {
-  
       alert('Email ou senha inválidos.');
     }
-
   };
 
 
