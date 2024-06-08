@@ -29,7 +29,7 @@
 
 Para acessar a documentação API do BluePoints, aperte [API.md](API.md).
 
-
+<br>
 
 # Repositório GitHub
 
