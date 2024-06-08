@@ -28,3 +28,11 @@
 # Documentação API
 
 Para acessar a documentação API do BluePoints, aperte [API.md](API.md).
+
+
+
+# Repositório GitHub
+
+Para acessar o repositório API do BluePoints, aperte [Repositório GitHub](https://github.com/aaaaaaaaana/BluePoints-Global).
+
+
