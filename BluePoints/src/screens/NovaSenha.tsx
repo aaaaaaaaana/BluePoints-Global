@@ -3,8 +3,10 @@
 
 import React, { useState } from 'react';
 import { StyleSheet, View, TouchableOpacity, Text, TextInput, Image, Dimensions, ScrollView } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialIcons'; 
+import AsyncStorage from '@react-native-async-storage/async-storage'; 
+
 
 
 
@@ -15,22 +17,40 @@ const { width: screenWidth } = Dimensions.get('window');
 
 
 
+const saveUser = async (email, senha) => {
+  try {
+    await AsyncStorage.setItem(`user-${email}`, JSON.stringify({ email, senha }));
+    console.log('Usuário salvo com sucesso!');
+  } catch (error) {
+    console.error('Erro ao salvar usuário:', error);
+  }
+};
+
+
 export default function NovaSenha() {
 
   const navigation = useNavigation();
+  const route = useRoute();
   
   const [senha, setSenha] = useState('');
   const [novaSenha, setnovaSenha] = useState('');
   const [showSenha, setShowSenha] = useState(false)
+  const email = route.params?.email;
 
+  const handleNovaSenha = async () => {
+    if (senha !== novaSenha) {
+      alert('As senhas não coincidem.');
+      return;
+    }
 
-  const handleNovaSenha = () => {
-    
-    console.log('Senha:', senha);
-    console.log('Nova Senha:', novaSenha);
+    if (email) {
+      await saveUser(email, novaSenha); 
+      alert('Senha alterada com sucesso!');
+      navigation.navigate('Login'); 
+    } else {
+      alert('Erro ao atualizar a senha. Tente novamente.');
+    }
   };
-
-
 
 
   const toggleShowPassword = () => {
