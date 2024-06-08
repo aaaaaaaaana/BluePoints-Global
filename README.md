@@ -1,6 +1,6 @@
 # BLUE POINT 🐋
 
-˖°𓇼🌊***Recicle nossos oceanos, você ganha, eu ganho, o mar ganha*** ˚˖𓍢ִ໋ 
+˖°𓇼🌊 ***Recicle nossos oceanos, você ganha, eu ganho, o mar ganha*** ˚˖𓍢ִ໋ 
 
 <br>
 
