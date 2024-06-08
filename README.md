@@ -1,4 +1,4 @@
-# BLUE POINT 🔵
+# BLUE POINT 🐋
 ***Recicle nossos oceanos, você ganha, eu ganho, o mar ganha***
 
 
