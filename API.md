@@ -120,3 +120,48 @@ Bem-vindo ao BluePoints! Aqui você encontrará informações sobre como usar no
   }
 }
 ```
+
+
+
+#### Método: GET
+
+#### Endpoint: `/get/pessoa`
+
+#### Parâmetros: 
+
+- `pontos` (integer)`: pontos recebidos pelq coleta
+- `id_pessoa`: atributo identificador da pessoa
+
+
+
+#### Resposta:
+
+
+* **Sucesso:** Um código de status 200 (OK) é retornado.
+* **Falha:** Um código de status 500 (Internal Server Error) é retornado se ocorrer um erro interno.
+
+
+#### Exemplo de Request:
+
+```json
+{
+{
+     "pontos": 1000,
+     "id_pessoa": 456
+}
+```
+
+
+#### Exemplo de Response (Sucesso):
+
+```json
+{
+      "id_pessoa": 0,
+      "pontos": 0,
+      "nm_pessoa": "string",
+       "sobrenome": "string"
+}
+```
+
+
+
