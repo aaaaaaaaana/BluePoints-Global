@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import { StyleSheet, View, TouchableOpacity, Text, TextInput, Image, Dimensions, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialIcons'; 
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 import Header from './Header'
@@ -13,8 +13,18 @@ import Header from './Header'
 const { width: screenWidth } = Dimensions.get('window'); 
 
 
+const saveUser = async (email, senha) => {
+  try {
+    await AsyncStorage.setItem(`user-${email}`, JSON.stringify({ email, senha }));
+    console.log('Usuário salvo com sucesso!');
+  } catch (error) {
+    console.error('Erro ao salvar usuário:', error);
+  }
+};
 
-export default function Login() {
+
+
+export default function Cadastro() {
 
   const navigation = useNavigation();
   
@@ -23,16 +33,15 @@ export default function Login() {
   const [showSenha, setShowSenha] = useState(false)
 
 
-  const handleLogin = () => {
-    navigation.navigate('Tab', { screen: 'Home' });
-
-
-    console.log('Email:', email);
-    console.log('Senha:', senha);
-
-
+  const handleCadastro = async () => {
+    if (email && senha) {
+      await saveUser(email, senha); 
+      alert('Cadastro realizado com sucesso!');
+      navigation.navigate('Login');
+    } else {
+      alert('Por favor, preencha todos os campos.');
+    }
   };
-
 
 
   const handleGoogleLogin = () => {
@@ -109,7 +118,7 @@ export default function Login() {
 
         </View>
 
-        <TouchableOpacity style={style.cadastroBotao} onPress={handleLogin}>
+        <TouchableOpacity style={style.cadastroBotao} onPress={handleCadastro}>
 
           <Text style={style.cadastroBotaoTxt}>Log in</Text>
 
