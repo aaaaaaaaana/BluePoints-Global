@@ -2,7 +2,7 @@
 
 Bem-vindo ao BluePoints! Aqui você encontrará informações sobre como usar nossos endpoints para acessar, cadastrar e visualizar seus pontos no aplicativo.
 
-### Autenticação Login
+### Autenticação Cadastro
 
 
 #### Método: POST
@@ -43,7 +43,7 @@ Bem-vindo ao BluePoints! Aqui você encontrará informações sobre como usar no
 }
 ```
 
-
+### Autenticação Login
 
 #### Método: GET
 
