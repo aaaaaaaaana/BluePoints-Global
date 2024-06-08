@@ -18,3 +18,8 @@
 
 
  1 ponto da global pelo Khoot do dia 22/05/24 - RM: 552295 Turma: 2TDSPF Nome: Matheus Felipe Camarinha Duarte
+
+
+# Documentação API
+
+Para acessar a documentação API do BluePoints, aperte [API.md](API.md).
