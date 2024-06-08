@@ -24,7 +24,7 @@ export default function Login() {
 
 
   const handleLogin = () => {
-
+    navigation.navigate('Tab', { screen: 'Home' });
 
 
     console.log('Email:', email);
@@ -36,6 +36,7 @@ export default function Login() {
 
 
   const handleGoogleLogin = () => {
+    navigation.navigate('Tab', { screen: 'Home' });
     
     console.log('Login com Google');
   };
