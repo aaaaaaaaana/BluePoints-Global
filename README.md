@@ -1,6 +1,8 @@
-# BLUE POINT 🐋
-***Recicle nossos oceanos, você ganha, eu ganho, o mar ganha***
+# BLUE POINT 🐋˚˖𓍢ִ໋ 🐋✧˚.🐟⋆
 
+˖°𓇼🌊***Recicle nossos oceanos, você ganha, eu ganho, o mar ganha*** ˚˖𓍢ִ໋ 
+
+<br>
 
 <div>
 <img align="center" alt="logo1" height=30%  width=30% src="documentacao/BluePointsLogo.png" />
